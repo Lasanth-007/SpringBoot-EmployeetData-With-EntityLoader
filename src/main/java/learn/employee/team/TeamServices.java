@@ -13,4 +13,8 @@ public class TeamServices {
         Team savedteam = teamRepository.save(teamMapper.toTeam(teamDto));
         return teamMapper.toTeamDto(savedteam);
     }
+
+    public List<TeamDto> GetTeams(){
+        return teamMapper.toTeamDtoList(teamRepository.findAll());
+    }
 }
