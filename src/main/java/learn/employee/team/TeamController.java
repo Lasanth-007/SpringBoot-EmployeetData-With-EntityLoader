@@ -9,4 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/team")
 public class TeamController {
     private final TeamServices teamServices;
+
+
+    @PostMapping
+    public ResponseEntity<TeamDto> addTeam(
+            @RequestBody TeamDto teamDto
+    ){
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(teamServices.addTeam(teamDto));
+    }
+
+
+
 }
