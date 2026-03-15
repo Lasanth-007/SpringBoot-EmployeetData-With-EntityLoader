@@ -12,7 +12,8 @@ public record ProfileDto(
         int age,
         @Email(message = "email formate is not valid")
         String email,
-        String bio
+        String bio,
+        Long employeeId
 
 ) {
 }
